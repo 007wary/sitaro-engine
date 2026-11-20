@@ -1,0 +1,9 @@
+# Never commit secrets
+*.env
+.env
+.env.*
+# Supabase CLI local state
+supabase/.temp/
+supabase/.branches/
+# Logs
+*.log
