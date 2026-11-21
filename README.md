@@ -1,5 +1,7 @@
 # sitaro-engine
 
+[![Tests](https://github.com/007wary/sitaro-engine/actions/workflows/test.yml/badge.svg)](https://github.com/007wary/sitaro-engine/actions/workflows/test.yml)
+
 The open-source astrology calculation engine behind **Sitaro: AI Kundli & Astrology** (Android, by Wary Dev).
 It runs as a Supabase Edge Function called `chart` and turns birth details into a Vedic (sidereal) birth chart.
 
