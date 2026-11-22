@@ -1,5 +1,5 @@
 # sitaro-engine tests: on every push and pull request to main.
-# Type-checks the "chart" Edge Function and runs the T4 test against Jagannatha Hora.
+# Type-checks the Edge Functions and runs the tests (T4 against Jagannatha Hora, Panchang against Drik Panchang).
 # tests/online_check.ts calls the live function and is not run here. Nothing is deployed.
 
 name: Tests
@@ -30,7 +30,7 @@ jobs:
           deno-version: v2.x
 
       - name: Type-check
-        run: deno check supabase/functions/chart/index.ts
+        run: deno check supabase/functions/chart/index.ts supabase/functions/sky/index.ts supabase/functions/panchang/index.ts
 
       - name: Engine tests
         run: deno task test

@@ -169,7 +169,8 @@ const JD_UNIX_EPOCH = 2440587.5;
 // ---------- Swiss Ephemeris setup ----------
 
 swe.swe_set_sid_mode(swe.SE_SIDM_LAHIRI_1940, 0, 0);
-const FLAGS = swe.SEFLG_SIDEREAL | swe.SEFLG_MOSEPH | swe.SEFLG_SPEED | swe.SEFLG_TRUEPOS;
+/** Flags for every sidereal position (also used by sky.ts and panchang.ts). */
+export const FLAGS = swe.SEFLG_SIDEREAL | swe.SEFLG_MOSEPH | swe.SEFLG_SPEED | swe.SEFLG_TRUEPOS;
 
 // ---------- Helpers ----------
 
@@ -203,7 +204,7 @@ function position(longitude: number): Position {
   };
 }
 
-function julianDayUt(utcMs: number): number {
+export function julianDayUt(utcMs: number): number {
   const d = new Date(utcMs);
   const hours = d.getUTCHours() + d.getUTCMinutes() / 60 + (d.getUTCSeconds() + d.getUTCMilliseconds() / 1000) / 3600;
   return swe.swe_julday(d.getUTCFullYear(), d.getUTCMonth() + 1, d.getUTCDate(), hours, swe.SE_GREG_CAL);
